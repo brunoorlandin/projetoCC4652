@@ -1,10 +1,25 @@
 import Head from 'next/head'
+import { useEffect, useState } from 'react';
 import styles from '../styles/styles.module.css'
-import script from '../public/script.js';
+
 export default function Home() {
-  function Start(params) {
-    setInterval(Get,1000);
+
+  const [dados, setDados] = useState({});
+
+  const chamarApi = async () => {
+    await fetch('/api/Receber')
+          .then((res) => res.json()
+            .then(respostaApi => {
+              setDados(respostaApi)
+            })
+          ) 
   }
+
+  useEffect(() => {
+    setInterval(chamarApi,1000);
+    // chamarApi()
+  }, []);
+
   return (
   
   <div className={styles.container}>
@@ -15,11 +30,13 @@ export default function Home() {
       </Head>
       <div id='fumaca' className = {styles.fumaca}>
          <h2>Fumaça</h2>
+         <h1>{dados.fumaca}</h1>
       </div>
       <div id='gas' className = {styles.gas}>
       <h2>Gás</h2>
+      <h1>{dados.gas}</h1>
       </div>
-      <button type='button' onClick={Start}> Start </button>
+      <button type='button'> Start </button>
     </div>
   )
 }
