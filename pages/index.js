@@ -36,7 +36,6 @@ export default function Home() {
       <h2>Gás</h2>
       <h1>{dados.gas}</h1>
       </div>
-      <button type='button'> Start </button>
     </div>
   )
 }
