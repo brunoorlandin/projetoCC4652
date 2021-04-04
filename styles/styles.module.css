@@ -2,3 +2,46 @@
   color: black;
   font-size: 20px;
 }
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  min-height: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: #161b22;
+}
+
+.container div {
+  padding: 20px;
+  border-radius: 20px;
+  margin: 40px;
+  width: 40%;
+  height: 80%;
+  background-color: #0da90d;
+}
+
+.container div p {
+  
+}
+
+.fumaca { 
+}
+
+.gas {
+  
+}
+
+@media screen and (max-width: 720px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .container div {
+    width: 100%;
+    height: 50%;
+    margin: 20px;
+  }
+}
