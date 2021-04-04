@@ -7,7 +7,7 @@ export default function Home() {
   const [dados, setDados] = useState({});
 
   const chamarApi = async () => {
-    await fetch('/api/Receber')
+    await fetch('/api/getData')
           .then((res) => res.json()
             .then(respostaApi => {
               setDados(respostaApi)
@@ -21,16 +21,16 @@ export default function Home() {
   }, []);
 
   return (
-  
   <div className={styles.container}>
       <Head>
         <title>Projeto Arduino</title>
         <link rel="icon" href="/favicon.ico" />
-        <script type="text/javascript" src="/script.js"></script>
       </Head>
       <div id='fumaca' className = {styles.fumaca}>
          <h2>Fumaça</h2>
          <h1>{dados.fumaca}</h1>
+         <h1>{dados.day}/{dados.month}/{dados.year}</h1>
+         <h1>{dados.hour}:{dados.minutes}</h1>
       </div>
       <div id='gas' className = {styles.gas}>
       <h2>Gás</h2>
