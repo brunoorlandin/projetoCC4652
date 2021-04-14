@@ -1,18 +1,33 @@
-const accountSid = process.env2.accountSid;
-const authToken = process.env2.authToken;
+const accountSid = process.env.accountSid;
+const authToken = process.env.authToken;
  
 const client = require('twilio')(accountSid, authToken); 
 
+let data1 = process.env.fumaca;
+let data2 = process.env.gas;
 
+let day = process.env.day;
+let month = process.env.month;
+let year = process.env.year;
+let hour = process.env.hour;
+let minutes = process.env.minutes;
 
-let data1 = "Fumaça";
-let data2 = "Gás"
- 
+let date = day + '/' + month + '/' + year;
+let time = hour + ':' +minutes;
+
+if (data1 == "2") {
+  var text = 'Um alerta de fumaca foi enviado em: ' + date + 'as ' + time;
+} 
+
+if (data2 == "1") {
+  var text = 'Um alerta de gas foi enviado em: ' + date + 'as ' + time;
+}
+
 function sendWhatsAppMessage () {
   client.messages 
-      .create({ 
-         body: data1,
-         from: 'whatsapp:+13174343663',       
+      .create({
+        body: "Um alerta de gas foi enviado!",
+         from: 'whatsapp:+14155238886',       
          to: 'whatsapp:+5511970178426' 
        }) 
       .then(message => console.log(message.sid)) 

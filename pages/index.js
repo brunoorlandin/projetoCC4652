@@ -27,14 +27,16 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div id='fumaca' className = {styles.fumaca}>
-         <h2>Fumaça</h2>
-         <h1>{dados.fumaca}</h1>
-         <h1>{dados.day}/{dados.month}/{dados.year}</h1>
-         <h1>{dados.hour}:{dados.minutes}</h1>
+         <h1>Fumaça</h1>
+         <p>Status: {dados.fumaca}</p>
+         <p>Dia: {dados.day}/{dados.month}/{dados.year}</p>
+         <p>Ultima atualização: {dados.hour}:{dados.minutes}</p>
       </div>
       <div id='gas' className = {styles.gas}>
-      <h2>Gás</h2>
-      <h1>{dados.gas}</h1>
+      <h1>Gás</h1>
+         <p>Status: {dados.gas}</p>
+         <p>Dia: {dados.day}/{dados.month}/{dados.year}</p>
+         <p>Ultima atualização: {dados.hour}:{dados.minutes}</p>
       </div>
     </div>
   )

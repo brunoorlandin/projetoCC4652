@@ -3,8 +3,8 @@ export default (req, res) => {
     res.setHeader("Access-Control-Allow-Origin", "*");
 
     var dados = {
-      "gas": process.env.fumaca,
-      "fumaca": process.env.gas,
+      "gas": process.env.gas,
+      "fumaca": process.env.fumaca,
       "data":process.env.data,
       "day":process.env.day,
       "minutes":process.env.minutes,
